@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import User from './user';
+import userstoremodule from './user.store.module';
 
 Vue.use(Vuex);
 
@@ -10,7 +10,7 @@ const store = () => {
 
       },
       modules: {
-          User
+        userstoremodule,
       },
   });
 }

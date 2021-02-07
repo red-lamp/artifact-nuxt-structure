@@ -3,17 +3,18 @@ import { PortIBStore } from '../ports/port.ib.store';
 import { PortOBRepository } from '../ports/port.ob.repository';
 import { SearchUsersDTO } from '../dto/search.users.dto';
 import { UsersResultDTO } from '../dto/users.result.dto';
+import { getModule } from 'vuex-module-decorators';
+import userstoremodule from '../../../store/user.store.module';
 
 export class FooBackstage extends BaseService implements PortIBStore, PortOBRepository {
-  // private userResultDTO: UsersResultDTO = new UsersResultDTO();
-  
+  private userStore = getModule(userstoremodule, this.store);
+
   saveUsersResult(usersResultDTO: UsersResultDTO) {
-    this.store.commit('setUsersResultDTO', usersResultDTO);
-    // this.userResultDTO = usersResultDTO;
+    this.userStore.setUsersResultDTO(usersResultDTO);
   }
 
   getUsersResult(): UsersResultDTO {
-    return this.store.state.User.usersResultDTO;
+    return this.userStore.userResultDTO;
   }
 
   buildUserRequestModel(usersId: number[]): SearchUsersDTO {
