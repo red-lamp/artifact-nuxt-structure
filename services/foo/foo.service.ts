@@ -6,12 +6,17 @@ export class FooService extends FooBackstage {
   private userRepository = new UserRepository(this.$axios);
 
   async searchUsers(): Promise<UsersResultDTO> {
-    const usersSearchResult = await this.userRepository.searchUser(this.buildUserRequestModel([536, 537]));
-
     const usersResult = new UsersResultDTO();
-    usersResult.users = usersSearchResult.users;
+    try {
+      const usersSearchResult = await this.userRepository.searchUser(this.buildUserRequestModel([536, 537]));
 
-    this.saveUsersResult(usersResult);
+      usersResult.users = usersSearchResult.users;
+  
+      this.saveUsersResult(usersResult);
+    } catch(err) {
+      console.log(err, err.stack, FooService.name);
+    }
+
     return usersResult;
   }
 }
