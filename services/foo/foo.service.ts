@@ -5,6 +5,9 @@ import { UserRepository } from './repositories/user.repository';
 export class FooService extends FooBackstage {
   private userRepository = new UserRepository(this.$axios);
 
+  /**
+   * Search users service function
+   */
   async searchUsers(): Promise<UsersResultDTO> {
     const usersResult = new UsersResultDTO();
     try {
@@ -12,6 +15,7 @@ export class FooService extends FooBackstage {
 
       usersResult.users = usersSearchResult.users;
   
+      // save user result to store
       this.saveUsersResult(usersResult);
     } catch(err) {
       console.log(err, err.stack, FooService.name);

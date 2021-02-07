@@ -27,7 +27,7 @@ export default {
       return;
     }
     users.forEach(user => {
-      console.log('yyy', user.first_name);
+      console.log('extracted user firstname', user.first_name);
     });
   }
 }

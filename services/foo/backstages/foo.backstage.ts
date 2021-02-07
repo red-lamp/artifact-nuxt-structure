@@ -9,14 +9,24 @@ import userstoremodule from '../../../store/user.store.module';
 export class FooBackstage extends BaseService implements PortIBStore, PortOBRepository {
   private userStore = getModule(userstoremodule, this.store);
 
+  /**
+   * @usersResultDTO DTO of users result for store data
+   */
   saveUsersResult(usersResultDTO: UsersResultDTO) {
     this.userStore.setUsersResultDTO(usersResultDTO);
   }
 
+  /**
+   * get users result from store
+   */
   getUsersResult(): UsersResultDTO {
     return this.userStore.userResultDTO;
   }
 
+  /**
+   * @usersId id of users
+   * build DTO for send with APIs request
+   */
   buildUserRequestModel(usersId: number[]): SearchUsersDTO {
     const searchUserDTO = new SearchUsersDTO();
     searchUserDTO.usersId = usersId;

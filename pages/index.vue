@@ -23,7 +23,7 @@ export default {
   },
   async asyncData({ $services }) {
     const userResult = await $services.user.searchUsers();
-    console.log('xxx', userResult.users, $services.user.getUsersResult());
+    console.log('user result from APIs', userResult.users, $services.user.getUsersResult());
   }
 }
 </script>

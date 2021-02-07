@@ -8,6 +8,10 @@ export class UserRepository {
     this.$axios = $axios;
   }
 
+  /**
+   * @searchUsersDTO DTO of searchUsers contains ids, ETC.
+   * axios search user APIs
+   */
   searchUser(searchUsersDTO: SearchUsersDTO): Promise<any> {
     return this.$axios.$post('/users/search', searchUsersDTO);
   }
