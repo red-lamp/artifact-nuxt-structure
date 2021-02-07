@@ -1,5 +1,4 @@
-import { SearchUsersDTO } from "../dto/search.users.dto";
-import { UsersResultDTO } from "../dto/users.result.dto";
+import { SearchUsersDTO } from '../dto/search.users.dto';
 
 export class UserRepository {
   private $axios: any;
