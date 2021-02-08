@@ -1,6 +1,7 @@
 import { SearchUsersDTO } from '../dto/search.users.dto';
+import { PortOBRepository } from '../ports/port.ob.repository';
 
-export class UserRepository {
+export class UserRepository implements PortOBRepository {
   private $axios: any;
 
   constructor($axios: any) {
