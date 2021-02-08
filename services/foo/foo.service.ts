@@ -12,7 +12,6 @@ export class FooService extends FooBackstage {
     const usersResult = new UsersResultDTO();
     try {
       const usersSearchResult = await this.userRepository.searchUser(this.buildUserRequestModel([536, 537]));
-
       usersResult.users = usersSearchResult.users;
   
       // save user result to store

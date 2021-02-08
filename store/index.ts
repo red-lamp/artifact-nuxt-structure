@@ -7,7 +7,7 @@ Vue.use(Vuex);
 const store = () => {
   return new Vuex.Store({
       state: {
-
+        // add state
       },
       modules: {
         userstoremodule,
