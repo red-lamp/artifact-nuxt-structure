@@ -22,7 +22,7 @@
 
 export default {
   async asyncData({ $services, $axios }) {
-    const users = $services.user.getUsersResult().users;
+    const users = $services.user.getUsersResultDTO().users;
     if (!users) {
       return;
     }
