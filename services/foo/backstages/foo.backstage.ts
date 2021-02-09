@@ -13,14 +13,14 @@ export class FooBackstage extends BaseService implements PortIBUserStore, PortOB
   /**
    * @usersResultDTO DTO of users result for store data
    */
-  saveUsersResult(usersResultDTO: UsersResultDTO) {
+  saveUsersResultDTO(usersResultDTO: UsersResultDTO) {
     this.userStore.setUsersResultDTO(usersResultDTO);
   }
 
   /**
    * get users result from store
    */
-  getUsersResult(): UsersResultDTO {
+  getUsersResultDTO(): UsersResultDTO {
     return this.userStore.userResultDTO;
   }
 

@@ -22,6 +22,6 @@ export class FooService extends FooBackstage implements PortOBRepository {
 
   saveUserToStore(usersResultDTO: UsersResultDTO): void {
     // save user result to store
-    this.saveUsersResult(usersResultDTO);
+    this.saveUsersResultDTO(usersResultDTO);
   }
 }
