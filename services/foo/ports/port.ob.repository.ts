@@ -1,5 +1,5 @@
-import { SearchUsersDTO } from '../dto/search.users.dto'
+import { UsersResultDTO } from '../dto/users.result.dto';
 
 export interface PortOBRepository {
-  searchUser(searchUsersDTO: SearchUsersDTO): Promise<any>;
+  saveUserToStore(usersResultDTO: UsersResultDTO): void;
 }

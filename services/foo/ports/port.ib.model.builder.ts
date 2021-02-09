@@ -1,5 +1,5 @@
 import { SearchUsersDTO } from '../dto/search.users.dto'
 
-export interface PortOBModelBuilder {
+export interface PortIBModelBuilder {
   buildUserRequestModel(usersId: []): SearchUsersDTO;
 }
